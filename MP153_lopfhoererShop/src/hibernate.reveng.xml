@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="mp153Shop"/>
+  <table-filter match-name="adresse"/>
+  <table-filter match-name="rechnung"/>
+  <table-filter match-name="bestellung"/>
+  <table-filter match-name="bestellungartikel"/>
+  <table-filter match-name="hoerertyp"/>
+  <table-filter match-name="rabatte"/>
+  <table-filter match-name="artikel"/>
+  <table-filter match-name="benutzer"/>
+  <table-filter match-name="steckertyp"/>
+  <table-filter match-name="benutzerbestellung"/>
+</hibernate-reverse-engineering>

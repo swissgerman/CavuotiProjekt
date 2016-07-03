@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27.06.2016 09:55:21 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Benutzer" table="benutzer" catalog="mp153shop" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="adresse" class="entity.Adresse" fetch="select">
+            <column name="adresseIDFS" />
+        </many-to-one>
+        <property name="benutzer" type="string">
+            <column name="benutzer" length="256" not-null="true" unique="true" />
+        </property>
+        <property name="passwort" type="string">
+            <column name="passwort" length="256" not-null="true" />
+        </property>
+        <property name="admin" type="java.lang.Boolean">
+            <column name="admin" />
+        </property>
+        <set name="benutzerbestellungs" table="benutzerbestellung" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="benutzerIDFS" />
+            </key>
+            <one-to-many class="entity.Benutzerbestellung" />
+        </set>
+    </class>
+</hibernate-mapping>

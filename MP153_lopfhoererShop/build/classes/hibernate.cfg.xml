@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mp153Shop?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping resource="entity/Bestellung.hbm.xml"/>
+    <mapping resource="entity/Hoerertyp.hbm.xml"/>
+    <mapping resource="entity/Bestellungartikel.hbm.xml"/>
+    <mapping resource="entity/Steckertyp.hbm.xml"/>
+    <mapping resource="entity/Rechnung.hbm.xml"/>
+    <mapping resource="entity/Artikel.hbm.xml"/>
+    <mapping resource="entity/Rabatte.hbm.xml"/>
+    <mapping resource="entity/Benutzerbestellung.hbm.xml"/>
+    <mapping resource="entity/Benutzer.hbm.xml"/>
+    <mapping resource="entity/Adresse.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

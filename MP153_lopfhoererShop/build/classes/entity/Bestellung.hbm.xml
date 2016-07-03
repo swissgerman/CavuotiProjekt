@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27.06.2016 09:55:21 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Bestellung" table="bestellung" catalog="mp153shop" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="rabatte" class="entity.Rabatte" fetch="select">
+            <column name="rabatteIDFS" />
+        </many-to-one>
+        <property name="bestellt" type="java.lang.Boolean">
+            <column name="bestellt" />
+        </property>
+        <set name="rechnungs" table="rechnung" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="bestellungIDFS" />
+            </key>
+            <one-to-many class="entity.Rechnung" />
+        </set>
+        <set name="bestellungartikels" table="bestellungartikel" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="bestellungIDFS" />
+            </key>
+            <one-to-many class="entity.Bestellungartikel" />
+        </set>
+        <set name="benutzerbestellungs" table="benutzerbestellung" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="bestellungIDFS" />
+            </key>
+            <one-to-many class="entity.Benutzerbestellung" />
+        </set>
+    </class>
+</hibernate-mapping>
